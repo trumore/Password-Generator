@@ -17,3 +17,5 @@ Link to page: https://trumore.github.io/Password-Generator
 
 Screenshot:
 ![Password-Gen-Screenshot](Assets/Pass-Gen-Screenshot.png)
+
+Credits - Built by Tom Rumore and with collaboration with the CU-NYC-FSF-PT-10-2020-U-C Study Group
