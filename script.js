@@ -67,7 +67,7 @@ alphabet = [
 ];
 // Space is for the Uppercase conversion
 space = [];
-// Choices declared outside the if statement so they can be concatenated upon condition
+// Choices variable is included to concatenate
 var choices;
 // converts letters to uppercase
 var toUpper = function (x) {
