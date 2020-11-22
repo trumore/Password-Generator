@@ -16,4 +16,4 @@ Built using: HTML, CSS, and Javascript
 Link to page: https://trumore.github.io/Password-Generator
 
 Screenshot:
-![Password-Generator](Assets/Pass-Gen-Screenshot)
+![Password-Gen-Screenshot](Assets/Pass-Gen-Screenshot.png)
