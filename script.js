@@ -2,7 +2,7 @@ var confirmNumber;
 var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
-var passwordString;
+var passwordString = [];
 var generatePassword = document.getElementById("generate");
 var passDisplay = document.getElementById("password");
 // these are to identify the strings of the characters, letters, and numbers
@@ -136,5 +136,22 @@ function createPassword() {
   if (confirmUppercase) {
     passwordString += alphabetUpper;
     console.log("upper");
+  }
+  if (
+    !confirmUppercase &&
+    !confirmLowercase &&
+    !confirmNumber &&
+    !confirmCharacter
+  ) {
+    alert("You must select a minimum of one character type");
+  }
+
+  if (passLength >= 8 || passLength <= 128) {
+    for (var i = 0; i < passLength; i++) {
+      var newPass = passwordString.charAt(
+        Math.floor(Math.random() * passwordString.length)
+      );
+      console.log(newPass);
+    }
   }
 }
