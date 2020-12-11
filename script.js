@@ -99,9 +99,25 @@ alphabetUpper = [
 generatePassword.addEventListener("click", createPassword);
 
 function createPassword() {
-  var length = parseInt(
+  var passLength = parseInt(
     prompt(
       "How many characters would you like your password? choose a number between 8 and 128"
     )
   );
+  if (!passLength) {
+    alert("You must choose a number");
+  } else if (passLength < 8 || passLength > 128) {
+    parseInt(prompt("Your choice must be between 8 and 128"));
+  } else {
+    confirmNumber = confirm("Do you want your password to contain numbers?");
+    confirmCharacter = confirm(
+      "Do you want your password to include Special Characters?"
+    );
+    confirmUppercase = confirm(
+      "Do you want your password to include Uppercase letters?"
+    );
+    confirmLowercase = confirm(
+      "Do you want your password to contain Lowercase letters?"
+    );
+  }
 }
