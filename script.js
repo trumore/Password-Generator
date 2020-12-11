@@ -4,97 +4,12 @@ var confirmUppercase;
 var confirmLowercase;
 var passwordString = [];
 var generatePassword = document.getElementById("generate");
-var passDisplay = document.getElementById("password");
+var passwordText = document.querySelector("#password");
 // these are to identify the strings of the characters, letters, and numbers
-var character = [
-  "!",
-  "#",
-  "$",
-  "%",
-  "&",
-  "'",
-  "(",
-  ")",
-  "*",
-  "+",
-  ",",
-  "-",
-  ".",
-  "/",
-  ":",
-  ";",
-  "<",
-  "=",
-  ">",
-  "?",
-  "@",
-  "[",
-  "]",
-  "^",
-  "_",
-  "`",
-  "{",
-  "|",
-  "}",
-  "~",
-];
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var alphabetLower = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
-var alphabetUpper = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+var character = ["~!@#$%^&*()_+}{?><]"];
+var numbers = ["123456789"];
+var alphabetLower = ["abcdefghijklmnopqrstuvwxyz"];
+var alphabetUpper = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
 
 generatePassword.addEventListener("click", createPassword);
 
@@ -145,13 +60,15 @@ function createPassword() {
   ) {
     alert("You must select a minimum of one character type");
   }
+  var newPass = "";
 
   if (passLength >= 8 || passLength <= 128) {
     for (var i = 0; i < passLength; i++) {
-      var newPass = passwordString.charAt(
+      newPass += passwordString.charAt(
         Math.floor(Math.random() * passwordString.length)
       );
       console.log(newPass);
+      passwordText.value = newPass;
     }
   }
 }
