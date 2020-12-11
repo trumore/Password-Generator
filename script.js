@@ -95,3 +95,13 @@ alphabetUpper = [
   "Y",
   "Z",
 ];
+
+generatePassword.addEventListener("click", createPassword);
+
+function createPassword() {
+  var length = parseInt(
+    prompt(
+      "How many characters would you like your password? choose a number between 8 and 128"
+    )
+  );
+}
