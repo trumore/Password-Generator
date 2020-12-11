@@ -1,12 +1,12 @@
-var enter;
 var confirmNumber;
 var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
+var passwordString;
 var generatePassword = document.getElementById("generate");
 var passDisplay = document.getElementById("password");
 // these are to identify the strings of the characters, letters, and numbers
-character = [
+var character = [
   "!",
   "#",
   "$",
@@ -38,8 +38,8 @@ character = [
   "}",
   "~",
 ];
-number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-alphabetLower = [
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var alphabetLower = [
   "a",
   "b",
   "c",
@@ -67,7 +67,7 @@ alphabetLower = [
   "y",
   "z",
 ];
-alphabetUpper = [
+var alphabetUpper = [
   "A",
   "B",
   "C",
@@ -119,5 +119,22 @@ function createPassword() {
     confirmLowercase = confirm(
       "Do you want your password to contain Lowercase letters?"
     );
+  }
+
+  if (confirmNumber) {
+    passwordString += numbers;
+    console.log("number");
+  }
+  if (confirmCharacter) {
+    passwordString += character;
+    console.log("character");
+  }
+  if (confirmLowercase) {
+    passwordString += alphabetLower;
+    console.log("lower");
+  }
+  if (confirmUppercase) {
+    passwordString += alphabetUpper;
+    console.log("upper");
   }
 }
