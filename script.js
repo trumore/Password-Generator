@@ -37,7 +37,7 @@ character = [
   "~",
 ];
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-alphabet = [
+alphabetLower = [
   "a",
   "b",
   "c",
@@ -64,6 +64,34 @@ alphabet = [
   "x",
   "y",
   "z",
+];
+alphabetUpper = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
 ];
 // Space is for the Uppercase conversion
 space = [];
@@ -117,52 +145,6 @@ function generatePassword() {
     !confirmLowercase
   ) {
     choices = alert("You must select password criteria");
-  }
-  // First if statement that uses user input prompts to determine choices
-  // Else if for 4 positive options
-  else if (
-    confirmCharacter &&
-    confirmNumber &&
-    confirmUppercase &&
-    confirmLowercase
-  ) {
-    choices = character.concat(number, alphabet, alphabet2);
-  }
-  // Else if for 3 positive options
-  else if (confirmCharacter && confirmNumber && confirmUppercase) {
-    choices = character.concat(number, alphabet2);
-  } else if (confirmCharacter && confirmNumber && confirmLowercase) {
-    choices = character.concat(number, alphabet);
-  } else if (confirmCharacter && confirmLowercase && confirmUppercase) {
-    choices = character.concat(alphabet, alphabet2);
-  } else if (confirmNumber && confirmLowercase && confirmUppercase) {
-    choices = number.concat(alphabet, alphabet2);
-  }
-  // Else if for 2 positive options
-  else if (confirmCharacter && confirmNumber) {
-    choices = character.concat(number);
-  } else if (confirmCharacter && confirmLowercase) {
-    choices = character.concat(alphabet);
-  } else if (confirmCharacter && confirmUppercase) {
-    choices = character.concat(alphabet2);
-  } else if (confirmLowercase && confirmNumber) {
-    choices = alphabet.concat(number);
-  } else if (confirmLowercase && confirmUppercase) {
-    choices = alphabet.concat(alphabet2);
-  } else if (confirmNumber && confirmUppercase) {
-    choices = number.concat(alphabet2);
-  }
-  // Else if for 1 positive option
-  else if (confirmCharacter) {
-    choices = character;
-  } else if (confirmNumber) {
-    choices = number;
-  } else if (confirmLowercase) {
-    choices = alphabet;
-  }
-  // Created space variable to fill uppercase conversion
-  else if (confirmUppercase) {
-    choices = space.concat(alphabet2);
   }
 
   // password variable is an array placeholder for user generated amount of length
